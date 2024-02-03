@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+p {  
+  text-align: left;  
+  font-size: 20px;  
+  margin-top: -5px;  
+}  
+</style>  
+</head>  
+<body>  
+<h3> JavaScript Countdown Timer </h3>  
+<p id = "demo_value"></p>  
+<script>  
+//display start time  
+const date_time1 = new Date('December 02, 2022 04:02:31').getTime();  
+//display end time  
+const date_time2 = new Date('December 21, 2022 02:02:13').getTime();  
+//show the difference between the start and end time  
+const time_var = date_time2 - date_time1;  
+//convert difference time in days  
+const days_data = Math.floor(time_var / (1000 * 60 * 60 * 24));  
+//convert difference time in hours  
+const hours_data = Math.floor((time_var % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));  
+//convert difference time in minutes  
+const minutes_data = Math.floor((time_var % (1000 * 60 * 60)) / (1000 * 60));  
+//convert difference time in the second  
+const seconds_data = Math.floor((time_var % (1000 * 60)) / 1000);  
+//display countdown timer   
+document.getElementById("demo_value").innerHTML = days_data + "days: " + hours_data + "hours: " + minutes_data + "minutes: " + seconds_data + "second ";  
+</script>  
+</body>  
+</html>  
